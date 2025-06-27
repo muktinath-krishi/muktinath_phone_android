@@ -277,14 +277,14 @@ class SettingsFragment : GenericMainFragment() {
             viewModel.availableLayoutsNames
         )
         layoutAdapter.setDropDownViewResource(R.layout.generic_dropdown_cell)
-        binding.meetingsSettings.layoutSpinner.adapter = layoutAdapter
-
-        viewModel.defaultLayout.observe(viewLifecycleOwner) { layout ->
-            binding.meetingsSettings.layoutSpinner.setSelection(
-                viewModel.availableLayoutsValues.indexOf(layout)
-            )
-        }
-        binding.meetingsSettings.layoutSpinner.onItemSelectedListener = layoutListener
+//        binding.meetingsSettings.layoutSpinner.adapter = layoutAdapter
+//
+//        viewModel.defaultLayout.observe(viewLifecycleOwner) { layout ->
+//            binding.meetingsSettings.layoutSpinner.setSelection(
+//                viewModel.availableLayoutsValues.indexOf(layout)
+//            )
+//        }
+//        binding.meetingsSettings.layoutSpinner.onItemSelectedListener = layoutListener
 
         // Light/Dark theme related
         val themeAdapter = ArrayAdapter(

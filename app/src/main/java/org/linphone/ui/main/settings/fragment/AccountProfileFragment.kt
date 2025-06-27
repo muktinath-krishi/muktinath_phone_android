@@ -249,9 +249,9 @@ class AccountProfileFragment : GenericMainFragment() {
         adapter.setDropDownViewResource(
             R.layout.assistant_country_picker_dropdown_cell
         )
-        binding.prefix.adapter = adapter
-        binding.prefix.onItemSelectedListener = dropdownListener
-        binding.prefix.setSelection(dialPlanIndex)
+//        binding.prefix.adapter = adapter
+//        binding.prefix.onItemSelectedListener = dropdownListener
+//        binding.prefix.setSelection(dialPlanIndex)
     }
 
     @UiThread

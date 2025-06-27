@@ -225,35 +225,24 @@
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:onClick="@{grantAllClickListener}"
-                style="@style/primary_button_label_style"
                 android:id="@+id/grant_all_permissions"
+                style="@style/primary_button_label_style"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:onClick="@{grantAllClickListener}"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
                 android:text="@string/assistant_permissions_grant_all_of_them"
-                app:layout_constraintWidth_max="@dimen/button_max_width"
-                app:layout_constraintTop_toBottomOf="@id/skip"
-                app:layout_constraintBottom_toTopOf="@id/mountains"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <ImageView
-                android:id="@+id/mountains"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/mountains"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
-                android:contentDescription="@null"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:tint="?attr/color_main1_500" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/skip"
+                app:layout_constraintWidth_max="@dimen/button_max_width" />
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
