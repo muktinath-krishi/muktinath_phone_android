@@ -53,7 +53,7 @@ open class GenericActivity : AppCompatActivity() {
 
     private lateinit var toastsArea: ViewGroup
 
-    private var mainColor: String = "orange"
+    private var mainColor: String = "green"
 
     override fun getTheme(): Resources.Theme {
         mainColor = corePreferences.themeMainColor

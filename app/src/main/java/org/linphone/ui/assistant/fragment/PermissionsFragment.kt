@@ -173,7 +173,8 @@ class PermissionsFragment : GenericFragment() {
     private fun goToLoginFragment() {
         if (findNavController().currentDestination?.id == R.id.permissionsFragment) {
             val action =
-                PermissionsFragmentDirections.actionPermissionsFragmentToLandingFragment()
+                PermissionsFragmentDirections.actionLandingFragmentToThirdPartySipAccountLoginFragment()
+//                PermissionsFragmentDirections.actionPermissionsFragmentToLandingFragment()
             findNavController().navigate(action)
         }
     }
