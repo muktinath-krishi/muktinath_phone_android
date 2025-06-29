@@ -85,11 +85,11 @@ class NotificationsManager
     companion object {
         private const val TAG = "[Notifications Manager]"
 
-        const val INTENT_HANGUP_CALL_NOTIF_ACTION = "org.linphone.HANGUP_CALL_ACTION"
-        const val INTENT_ANSWER_CALL_NOTIF_ACTION = "org.linphone.ANSWER_CALL_ACTION"
-        const val INTENT_TOGGLE_SPEAKER_CALL_NOTIF_ACTION = "org.linphone.TOGGLE_SPEAKER_CALL_ACTION"
-        const val INTENT_REPLY_MESSAGE_NOTIF_ACTION = "org.linphone.REPLY_ACTION"
-        const val INTENT_MARK_MESSAGE_AS_READ_NOTIF_ACTION = "org.linphone.MARK_AS_READ_ACTION"
+        const val INTENT_HANGUP_CALL_NOTIF_ACTION = "com.muktinath.mphone.HANGUP_CALL_ACTION"
+        const val INTENT_ANSWER_CALL_NOTIF_ACTION = "com.muktinath.mphone.ANSWER_CALL_ACTION"
+        const val INTENT_TOGGLE_SPEAKER_CALL_NOTIF_ACTION = "com.muktinath.mphone.TOGGLE_SPEAKER_CALL_ACTION"
+        const val INTENT_REPLY_MESSAGE_NOTIF_ACTION = "com.muktinath.mphone.REPLY_ACTION"
+        const val INTENT_MARK_MESSAGE_AS_READ_NOTIF_ACTION = "com.muktinath.mphone.MARK_AS_READ_ACTION"
 
         const val INTENT_ANSWER_CALL_NOTIF_CODE = 2
         const val INTENT_HANGUP_CALL_NOTIF_CODE = 3

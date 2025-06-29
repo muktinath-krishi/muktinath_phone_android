@@ -10,15 +10,15 @@
     <!-- Not translatable strings -->
     <string name="vertical_separator" translatable="false">|</string>
 
-    <string name="assistant_web_platform_link" translatable="false">subscribe.linphone.org</string>
-    <string name="assistant_linphone_contact_us_link" translatable="false">linphone.org/contact</string>
+    <string name="assistant_web_platform_link" translatable="false">mitech.com.np</string>
+    <string name="assistant_linphone_contact_us_link" translatable="false">muktinathitech.com.np/contact</string>
 
-    <string name="notification_channel_call_id" translatable="false">linphone_6.0_notification_call_id</string>
-    <string name="notification_channel_incoming_call_id" translatable="false">linphone_6.0_notification_incoming_call_id</string>
-    <string name="notification_channel_missed_call_id" translatable="false">linphone_6.0_notification_missed_call_id</string>
-    <string name="notification_channel_service_id" translatable="false">linphone_6.0_notification_service_id</string>
-    <string name="notification_channel_chat_id" translatable="false">linphone_6.0_notification_chat_id</string>
-    <string name="notification_channel_without_ringtone_incoming_call_id" translatable="false">linphone_6.0.1_notification_incoming_call_id</string>
+    <string name="notification_channel_call_id" translatable="false">&appName;_6.0_notification_call_id</string>
+    <string name="notification_channel_incoming_call_id" translatable="false">&appName;_6.0_notification_incoming_call_id</string>
+    <string name="notification_channel_missed_call_id" translatable="false">&appName;_6.0_notification_missed_call_id</string>
+    <string name="notification_channel_service_id" translatable="false">&appName;_6.0_notification_service_id</string>
+    <string name="notification_channel_chat_id" translatable="false">&appName;_6.0_notification_chat_id</string>
+    <string name="notification_channel_without_ringtone_incoming_call_id" translatable="false">&appName;_6.0.1_notification_incoming_call_id</string>
 
     <string name="emoji_love" translatable="false">❤️</string>
     <string name="emoji_thumbs_up" translatable="false">👍</string>
@@ -117,11 +117,12 @@
     <!-- First screens user see when app is installed and started -->
     <string name="welcome_page_title">Welcome</string>
     <string name="welcome_page_subtitle">in &appName;</string>
-    <string name="welcome_page_1_message">A <b>secured</b>, <b>open source</b> and <b>French</b> communication app.</string>
-    <string name="welcome_page_2_title">Secured</string>
-    <string name="welcome_page_2_message">Your communications are safe thanks to our <b>end-to-end encryption</b>.</string>
-    <string name="welcome_page_3_title">Open source</string>
-    <string name="welcome_page_3_message">A <b>free</b> and open source application since <b>2001</b>.</string>
+    <string name="welcome_page_1_message">A <b>reliable</b> and <b>secure</b> calling app designed for <b>your community</b>.</string>
+    <string name="welcome_page_2_title">Private &amp; Secure</string>
+    <string name="welcome_page_2_message">Your calls and messages are protected with <b>advanced encryption</b>.</string>
+    <string name="welcome_page_3_title">Trusted &amp; Transparent</string>
+    <string name="welcome_page_3_message">Built with trusted technology for <b>freedom</b>, <b>privacy</b>, and <b>control</b> in your hands.</string>
+
 
     <!-- Generic toasts -->
     <string name="sip_address_copied_to_clipboard_toast">SIP address copied into clipboard</string>
