@@ -16,10 +16,10 @@
             type="View.OnClickListener" />
         <variable
             name="viewModel"
-            type="org.linphone.ui.main.history.viewmodel.StartCallViewModel" />
+            type="com.muktinath.mphone.ui.main.history.viewmodel.StartCallViewModel" />
         <variable
             name="callsViewModel"
-            type="org.linphone.ui.call.viewmodel.CallsViewModel" />
+            type="com.muktinath.mphone.ui.call.viewmodel.CallsViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout

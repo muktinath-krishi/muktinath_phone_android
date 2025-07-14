@@ -1,7 +1,6 @@
 import com.android.build.gradle.internal.tasks.factory.dependsOn
 import com.google.firebase.crashlytics.buildtools.gradle.CrashlyticsExtension
 import com.google.gms.googleservices.GoogleServicesPlugin
-import java.io.ByteArrayOutputStream
 import java.io.FileInputStream
 import java.util.Properties
 
@@ -14,15 +13,15 @@ plugins {
     alias(libs.plugins.crashlytics)
 }
 
-val packageName = "org.linphone"
+val packageName = "com.muktinath.mphone"
 val useDifferentPackageNameForDebugBuild = false
 
 val sdkPath = providers.gradleProperty("LinphoneSdkBuildDir").get()
 val googleServices = File(projectDir.absolutePath + "/google-services.json")
-val linphoneLibs = File("$sdkPath/libs/")
-val linphoneDebugLibs = File("$sdkPath/libs-debug/")
+val mphoneLibs = File("$sdkPath/libs/")
+val mphoneDebugLibs = File("$sdkPath/libs-debug/")
 val firebaseCloudMessagingAvailable = googleServices.exists()
-val crashlyticsAvailable = googleServices.exists() && linphoneLibs.exists() && linphoneDebugLibs.exists()
+val crashlyticsAvailable = googleServices.exists() && mphoneLibs.exists() && mphoneDebugLibs.exists()
 
 if (firebaseCloudMessagingAvailable) {
     println("google-services.json found, enabling CloudMessaging feature")
@@ -31,77 +30,31 @@ if (firebaseCloudMessagingAvailable) {
     println("google-services.json not found, disabling CloudMessaging feature")
 }
 
-var gitBranch = ByteArrayOutputStream()
-var gitVersion = "6.0.9"
-
-task("getGitVersion") {
-    val gitVersionStream = ByteArrayOutputStream()
-    val gitCommitsCount = ByteArrayOutputStream()
-    val gitCommitHash = ByteArrayOutputStream()
-
-    try {
-        exec {
-            commandLine("git", "describe", "--abbrev=0")
-            standardOutput = gitVersionStream
-        }
-        exec {
-            commandLine(
-                "git",
-                "rev-list",
-                gitVersionStream.toString().trim() + "..HEAD",
-                "--count",
-            )
-            standardOutput = gitCommitsCount
-        }
-        exec {
-            commandLine("git", "rev-parse", "--short", "HEAD")
-            standardOutput = gitCommitHash
-        }
-        exec {
-            commandLine("git", "name-rev", "--name-only", "HEAD")
-            standardOutput = gitBranch
-        }
-
-        gitVersion =
-            if (gitCommitsCount.toString().trim().toInt() == 0) {
-                gitVersionStream.toString().trim()
-            } else {
-                gitVersionStream.toString().trim() + "." +
-                    gitCommitsCount.toString()
-                        .trim() + "+" + gitCommitHash.toString().trim()
-            }
-        println("Git version: $gitVersion")
-    } catch (e: Exception) {
-        println("Git not found [$e], using $gitVersion")
-    }
-    project.version = gitVersion
-}
-project.tasks.preBuild.dependsOn("getGitVersion")
-
 configurations {
     implementation { isCanBeResolved = true }
 }
-task("linphoneSdkSource") {
+
+task("mphoneSdkSource") {
     doLast {
         configurations.implementation.get().incoming.resolutionResult.allComponents.forEach {
-            if (it.id.displayName.contains("linphone-sdk-android")) {
-                println("Linphone SDK used is ${it.moduleVersion?.version}")
+            if (it.id.displayName.contains("mphone-sdk-android")) {
+                println("MPhone SDK used is ${it.moduleVersion?.version}")
             }
         }
     }
 }
-project.tasks.preBuild.dependsOn("linphoneSdkSource")
+project.tasks.preBuild.dependsOn("mphoneSdkSource")
 
 android {
-    namespace = "org.linphone"
+    namespace = "com.muktinath.mphone"
     compileSdk = 36
 
     defaultConfig {
         applicationId = packageName
         minSdk = 28
         targetSdk = 36
-        versionCode = 600009 // 6.00.009
-        versionName = "6.0.9"
+        versionCode = 1
+        versionName = "1.0.0"
 
         manifestPlaceholders["appAuthRedirectScheme"] = packageName
 
@@ -116,7 +69,7 @@ android {
         variant.outputs
             .map { it as com.android.build.gradle.internal.api.BaseVariantOutputImpl }
             .forEach { output ->
-                output.outputFileName = "linphone-android-${variant.buildType.name}-${project.version}.apk"
+                output.outputFileName = "MPhone-${variant.buildType.name}-1.0.0.apk"
             }
     }
 
@@ -135,7 +88,7 @@ android {
                 keyPassword = keystoreProperties["keyPassword"] as String
                 println("Signing config release is using keystore [$storeFile]")
             } else {
-                println("Keystore [$storeFile] doesn't exists!")
+                println("Keystore [$storeFile] doesn't exist!")
             }
         }
     }
@@ -153,9 +106,9 @@ android {
             } else {
                 resValue("string", "file_provider", "$packageName.fileprovider")
             }
-            resValue("string", "linphone_app_version", gitVersion.trim())
-            resValue("string", "linphone_app_branch", gitBranch.toString().trim())
-            resValue("string", "linphone_openid_callback_scheme", packageName)
+            resValue("string", "mphone_app_version", "1.0.0")
+            resValue("string", "mphone_app_branch", "main")
+            resValue("string", "mphone_openid_callback_scheme", packageName)
 
             if (crashlyticsAvailable) {
                 val path = File("$sdkPath/libs-debug/").toString()
@@ -176,9 +129,9 @@ android {
             signingConfig = signingConfigs.getByName("release")
 
             resValue("string", "file_provider", "$packageName.fileprovider")
-            resValue("string", "linphone_app_version", gitVersion.trim())
-            resValue("string", "linphone_app_branch", gitBranch.toString().trim())
-            resValue("string", "linphone_openid_callback_scheme", packageName)
+            resValue("string", "mphone_app_version", "1.0.0")
+            resValue("string", "mphone_app_branch", "main")
+            resValue("string", "mphone_openid_callback_scheme", packageName)
 
             if (crashlyticsAvailable) {
                 val path = File("$sdkPath/libs-debug/").toString()
@@ -228,31 +181,21 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.emoji2)
     implementation(libs.androidx.car)
-
-    // https://github.com/google/flexbox-layout/blob/main/LICENSE Apache v2.0
     implementation(libs.google.flexbox)
-    // https://github.com/material-components/material-components-android/blob/master/LICENSE Apache v2.0
     implementation(libs.google.material)
-    // To be able to parse native crash tombstone and print them with SDK logs the next time the app will start
     implementation(libs.google.protobuf)
-
     implementation(platform(libs.google.firebase.bom))
     implementation(libs.google.firebase.messaging)
     implementation(libs.google.firebase.crashlytics)
-
-    // https://github.com/coil-kt/coil/blob/main/LICENSE.txt Apache v2.0
     implementation(libs.coil)
     implementation(libs.coil.gif)
     implementation(libs.coil.svg)
     implementation(libs.coil.video)
-    // https://github.com/tommybuonomo/dotsindicator/blob/master/LICENSE Apache v2.0
     implementation(libs.dots.indicator)
-    // https://github.com/Baseflow/PhotoView/blob/master/LICENSE Apache v2.0
     implementation(libs.photoview)
-    // https://github.com/openid/AppAuth-Android/blob/master/LICENSE Apache v2.0
     implementation(libs.openid.appauth)
 
-    implementation(libs.linphone)
+    implementation(libs.linphone) // Keep this if you’re really using Linphone SDK!
 }
 
 configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {

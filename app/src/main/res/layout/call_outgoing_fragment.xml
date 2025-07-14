@@ -7,10 +7,10 @@
         <import type="android.view.View" />
         <variable
             name="viewModel"
-            type="org.linphone.ui.call.viewmodel.CurrentCallViewModel" />
+            type="com.muktinath.mphone.ui.call.viewmodel.CurrentCallViewModel" />
         <variable
             name="numpadModel"
-            type="org.linphone.ui.main.history.model.NumpadModel" />
+            type="com.muktinath.mphone.ui.main.history.model.NumpadModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -95,25 +95,25 @@
                 android:textColor="@color/bc_white"
                 android:textSize="22sp"
                 app:layout_constraintTop_toBottomOf="@id/avatar"
-                app:layout_constraintBottom_toTopOf="@id/address"
+                app:layout_constraintBottom_toTopOf="@id/local_preview_video_surface"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                style="@style/default_text_style"
-                android:id="@+id/address"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{viewModel.displayedAddress, default=`sip:johndoe@sip.linphone.org`}"
-                android:textColor="@color/bc_white"
-                android:textSize="14sp"
-                android:visibility="@{viewModel.hideSipAddresses ? View.GONE : View.VISIBLE}"
-                app:layout_constraintTop_toBottomOf="@id/name"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+<!--            <androidx.appcompat.widget.AppCompatTextView-->
+<!--                style="@style/default_text_style"-->
+<!--                android:id="@+id/address"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@{viewModel.displayedAddress, default=`sip:johndoe@sip.linphone.org`}"-->
+<!--                android:textColor="@color/bc_white"-->
+<!--                android:textSize="14sp"-->
+<!--                android:visibility="@{viewModel.hideSipAddresses ? View.GONE : View.VISIBLE}"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/name"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent" />-->
 
-            <org.linphone.ui.call.view.RoundCornersTextureView
+            <com.muktinath.mphone.ui.call.view.RoundCornersTextureView
                 android:id="@+id/local_preview_video_surface"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

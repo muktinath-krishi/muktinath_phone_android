@@ -17,7 +17,7 @@
             type="View.OnClickListener" />
         <variable
             name="viewModel"
-            type="org.linphone.ui.main.history.viewmodel.HistoryViewModel" />
+            type="com.muktinath.mphone.ui.main.history.viewmodel.HistoryViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -118,26 +118,26 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/avatar" />
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        style="@style/default_text_style"
-                        android:id="@+id/address"
-                        android:onClick="@{copyPeerSipUriClickListener}"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginEnd="16dp"
-                        android:text="@{viewModel.callLogModel.displayedAddress, default=`+33601020304`}"
-                        android:textColor="?attr/color_main2_800"
-                        android:textSize="14sp"
-                        android:maxLines="1"
-                        android:ellipsize="end"
-                        android:drawableEnd="@drawable/copy"
-                        android:drawablePadding="5dp"
-                        android:visibility="@{viewModel.isConferenceCallLog || viewModel.hideSipAddresses ? View.GONE : View.VISIBLE}"
-                        app:drawableTint="?attr/color_main2_600"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/name" />
+<!--                    <androidx.appcompat.widget.AppCompatTextView-->
+<!--                        style="@style/default_text_style"-->
+<!--                        android:id="@+id/address"-->
+<!--                        android:onClick="@{copyPeerSipUriClickListener}"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="16dp"-->
+<!--                        android:layout_marginEnd="16dp"-->
+<!--                        android:text="@{viewModel.callLogModel.displayedAddress, default=`+33601020304`}"-->
+<!--                        android:textColor="?attr/color_main2_800"-->
+<!--                        android:textSize="14sp"-->
+<!--                        android:maxLines="1"-->
+<!--                        android:ellipsize="end"-->
+<!--                        android:drawableEnd="@drawable/copy"-->
+<!--                        android:drawablePadding="5dp"-->
+<!--                        android:visibility="@{viewModel.isConferenceCallLog || viewModel.hideSipAddresses ? View.GONE : View.VISIBLE}"-->
+<!--                        app:drawableTint="?attr/color_main2_600"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent"-->
+<!--                        app:layout_constraintStart_toStartOf="parent"-->
+<!--                        app:layout_constraintTop_toBottomOf="@id/name" />-->
 
                     <androidx.appcompat.widget.AppCompatTextView
                         style="@style/default_text_style_300"
@@ -150,7 +150,7 @@
                         android:textSize="14sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/address" />
+                        app:layout_constraintTop_toBottomOf="@id/name" />
 
                     <ImageView
                         android:id="@+id/call"
