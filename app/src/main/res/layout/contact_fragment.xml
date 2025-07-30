@@ -143,19 +143,19 @@
 
                     <ImageView
                         android:id="@+id/call"
-                        android:onClick="@{() -> viewModel.startAudioCall()}"
-                        android:enabled="@{viewModel.atLeastOneSipAddressOrPhoneNumber}"
                         android:layout_width="56dp"
                         android:layout_height="56dp"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/circle_light_blue_button_background"
+                        android:contentDescription="@string/content_description_call_start"
+                        android:enabled="@{viewModel.atLeastOneSipAddressOrPhoneNumber}"
+                        android:onClick="@{() -> viewModel.startAudioCall()}"
                         android:padding="16dp"
                         android:src="@drawable/phone"
-                        android:contentDescription="@string/content_description_call_start"
-                        app:tint="?attr/color_main2_500"
-                        app:layout_constraintEnd_toStartOf="@id/chat"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/status" />
+                        app:layout_constraintTop_toBottomOf="@id/status"
+                        app:tint="?attr/color_main2_500" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         style="@style/default_text_style"
@@ -171,69 +171,69 @@
                         app:layout_constraintStart_toStartOf="@id/call"
                         app:layout_constraintEnd_toEndOf="@id/call"/>
 
-                    <ImageView
-                        android:id="@+id/chat"
-                        android:onClick="@{() -> viewModel.goToConversation()}"
-                        android:visibility="@{viewModel.chatDisabled ? View.GONE : View.VISIBLE}"
-                        android:enabled="@{viewModel.atLeastOneSipAddressOrPhoneNumber}"
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/circle_light_blue_button_background"
-                        android:padding="16dp"
-                        android:src="@drawable/chat_teardrop_text"
-                        android:contentDescription="@string/content_description_chat_create"
-                        app:tint="?attr/color_main2_500"
-                        app:layout_constraintEnd_toStartOf="@id/video_call"
-                        app:layout_constraintStart_toEndOf="@id/call"
-                        app:layout_constraintTop_toBottomOf="@id/status" />
+<!--                    <ImageView-->
+<!--                        android:id="@+id/chat"-->
+<!--                        android:layout_width="56dp"-->
+<!--                        android:layout_height="56dp"-->
+<!--                        android:layout_marginTop="20dp"-->
+<!--                        android:background="@drawable/circle_light_blue_button_background"-->
+<!--                        android:contentDescription="@string/content_description_chat_create"-->
+<!--                        android:enabled="@{viewModel.atLeastOneSipAddressOrPhoneNumber}"-->
+<!--                        android:onClick="@{() -> viewModel.goToConversation()}"-->
+<!--                        android:padding="16dp"-->
+<!--                        android:src="@drawable/chat_teardrop_text"-->
+<!--                        android:visibility="@{viewModel.chatDisabled ? View.GONE : View.VISIBLE}"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent"-->
+<!--                        app:layout_constraintStart_toEndOf="@id/call"-->
+<!--                        app:layout_constraintTop_toBottomOf="@id/status"-->
+<!--                        app:tint="?attr/color_main2_500" />-->
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        style="@style/default_text_style"
-                        android:id="@+id/chat_label"
-                        android:onClick="@{() -> viewModel.goToConversation()}"
-                        android:visibility="@{viewModel.chatDisabled ? View.GONE : View.VISIBLE}"
-                        android:enabled="@{viewModel.atLeastOneSipAddressOrPhoneNumber}"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/contact_message_action"
-                        android:textSize="14sp"
-                        app:layout_constraintTop_toBottomOf="@id/chat"
-                        app:layout_constraintStart_toStartOf="@id/chat"
-                        app:layout_constraintEnd_toEndOf="@id/chat"/>
+<!--                    <androidx.appcompat.widget.AppCompatTextView-->
+<!--                        style="@style/default_text_style"-->
+<!--                        android:id="@+id/chat_label"-->
+<!--                        android:onClick="@{() -> viewModel.goToConversation()}"-->
+<!--                        android:visibility="@{viewModel.chatDisabled ? View.GONE : View.VISIBLE}"-->
+<!--                        android:enabled="@{viewModel.atLeastOneSipAddressOrPhoneNumber}"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:text="@string/contact_message_action"-->
+<!--                        android:textSize="14sp"-->
+<!--                        app:layout_constraintTop_toBottomOf="@id/chat"-->
+<!--                        app:layout_constraintStart_toStartOf="@id/chat"-->
+<!--                        app:layout_constraintEnd_toEndOf="@id/chat"/>-->
 
-                    <ImageView
-                        android:id="@+id/video_call"
-                        android:onClick="@{() -> viewModel.startVideoCall()}"
-                        android:visibility="@{viewModel.videoCallDisabled ? View.GONE : View.VISIBLE}"
-                        android:enabled="@{viewModel.atLeastOneSipAddressOrPhoneNumber}"
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/circle_light_blue_button_background"
-                        android:padding="16dp"
-                        android:src="@drawable/video_camera"
-                        android:contentDescription="@string/content_description_call_start_video"
-                        app:tint="?attr/color_main2_500"
-                        app:layout_constraintStart_toEndOf="@id/chat"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/status" />
+<!--                    <ImageView-->
+<!--                        android:id="@+id/video_call"-->
+<!--                        android:onClick="@{() -> viewModel.startVideoCall()}"-->
+<!--                        android:visibility="@{viewModel.videoCallDisabled ? View.GONE : View.VISIBLE}"-->
+<!--                        android:enabled="@{viewModel.atLeastOneSipAddressOrPhoneNumber}"-->
+<!--                        android:layout_width="56dp"-->
+<!--                        android:layout_height="56dp"-->
+<!--                        android:layout_marginTop="20dp"-->
+<!--                        android:background="@drawable/circle_light_blue_button_background"-->
+<!--                        android:padding="16dp"-->
+<!--                        android:src="@drawable/video_camera"-->
+<!--                        android:contentDescription="@string/content_description_call_start_video"-->
+<!--                        app:tint="?attr/color_main2_500"-->
+<!--                        app:layout_constraintStart_toEndOf="@id/chat"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent"-->
+<!--                        app:layout_constraintTop_toBottomOf="@id/status" />-->
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        style="@style/default_text_style"
-                        android:id="@+id/video_call_label"
-                        android:onClick="@{() -> viewModel.startVideoCall()}"
-                        android:visibility="@{viewModel.videoCallDisabled ? View.GONE : View.VISIBLE}"
-                        android:enabled="@{viewModel.atLeastOneSipAddressOrPhoneNumber}"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/contact_video_call_action"
-                        android:textSize="14sp"
-                        app:layout_constraintTop_toBottomOf="@id/video_call"
-                        app:layout_constraintStart_toStartOf="@id/video_call"
-                        app:layout_constraintEnd_toEndOf="@id/video_call"/>
+<!--                    <androidx.appcompat.widget.AppCompatTextView-->
+<!--                        style="@style/default_text_style"-->
+<!--                        android:id="@+id/video_call_label"-->
+<!--                        android:onClick="@{() -> viewModel.startVideoCall()}"-->
+<!--                        android:visibility="@{viewModel.videoCallDisabled ? View.GONE : View.VISIBLE}"-->
+<!--                        android:enabled="@{viewModel.atLeastOneSipAddressOrPhoneNumber}"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:text="@string/contact_video_call_action"-->
+<!--                        android:textSize="14sp"-->
+<!--                        app:layout_constraintTop_toBottomOf="@id/video_call"-->
+<!--                        app:layout_constraintStart_toStartOf="@id/video_call"-->
+<!--                        app:layout_constraintEnd_toEndOf="@id/video_call"/>-->
 
                     <androidx.appcompat.widget.AppCompatTextView
                         style="@style/section_header_style"

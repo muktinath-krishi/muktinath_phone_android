@@ -134,25 +134,25 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/subject" />
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        style="@style/default_text_style"
-                        android:id="@+id/sip_uri"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginEnd="16dp"
-                        android:text="@{viewModel.sipUri, default=`linphone.com/wjre.fr`}"
-                        android:textSize="14sp"
-                        android:textColor="?attr/color_main2_600"
-                        android:maxLines="1"
-                        android:ellipsize="end"
-                        android:drawableStart="@drawable/video_camera"
-                        android:drawablePadding="8dp"
-                        android:drawableTint="?attr/color_main2_600"
-                        app:layout_constraintTop_toBottomOf="@id/separator"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/share" />
+<!--                    <androidx.appcompat.widget.AppCompatTextView-->
+<!--                        style="@style/default_text_style"-->
+<!--                        android:id="@+id/sip_uri"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="16dp"-->
+<!--                        android:layout_marginStart="16dp"-->
+<!--                        android:layout_marginEnd="16dp"-->
+<!--                        android:text="@{viewModel.sipUri, default=`linphone.com/wjre.fr`}"-->
+<!--                        android:textSize="14sp"-->
+<!--                        android:textColor="?attr/color_main2_600"-->
+<!--                        android:maxLines="1"-->
+<!--                        android:ellipsize="end"-->
+<!--                        android:drawableStart="@drawable/video_camera"-->
+<!--                        android:drawablePadding="8dp"-->
+<!--                        android:drawableTint="?attr/color_main2_600"-->
+<!--                        app:layout_constraintTop_toBottomOf="@id/separator"-->
+<!--                        app:layout_constraintStart_toStartOf="parent"-->
+<!--                        app:layout_constraintEnd_toStartOf="@id/share" />-->
 
                     <ImageView
                         android:id="@+id/share"
@@ -164,9 +164,9 @@
                         android:src="@drawable/share_network"
                         android:contentDescription="@string/content_description_meeting_share"
                         android:background="@drawable/circle_transparent_button_background"
-                        app:layout_constraintTop_toTopOf="@id/sip_uri"
-                        app:layout_constraintBottom_toBottomOf="@id/sip_uri"
-                        app:layout_constraintStart_toEndOf="@id/sip_uri"
+                        app:layout_constraintTop_toTopOf="@id/separator"
+                        app:layout_constraintBottom_toBottomOf="@id/separator"
+                        app:layout_constraintStart_toEndOf="@id/separator"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:tint="?attr/color_main2_600" />
 
@@ -186,7 +186,7 @@
                         android:drawableStart="@drawable/clock"
                         android:drawablePadding="8dp"
                         android:drawableTint="?attr/color_main2_600"
-                        app:layout_constraintTop_toBottomOf="@id/sip_uri"
+                        app:layout_constraintTop_toBottomOf="@id/separator"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent" />
 

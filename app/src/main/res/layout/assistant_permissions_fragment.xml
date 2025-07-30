@@ -164,34 +164,34 @@
                 app:layout_constraintStart_toEndOf="@id/record_audio_icon"
                 app:layout_constraintTop_toTopOf="@id/record_audio_icon" />
 
-            <ImageView
-                android:id="@+id/access_camera_icon"
-                android:layout_width="56dp"
-                android:layout_height="56dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="25dp"
-                android:background="@drawable/circle_light_blue_button_background"
-                android:contentDescription="@null"
-                android:padding="12dp"
-                android:src="@drawable/video_camera"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/record_audio_icon"
-                app:tint="?attr/color_main2_500" />
+<!--            <ImageView-->
+<!--                android:id="@+id/access_camera_icon"-->
+<!--                android:layout_width="56dp"-->
+<!--                android:layout_height="56dp"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginTop="25dp"-->
+<!--                android:background="@drawable/circle_light_blue_button_background"-->
+<!--                android:contentDescription="@null"-->
+<!--                android:padding="12dp"-->
+<!--                android:src="@drawable/video_camera"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/record_audio_icon"-->
+<!--                app:tint="?attr/color_main2_500" />-->
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/access_camera_title"
-                style="@style/default_text_style"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:ellipsize="end"
-                android:maxLines="2"
-                android:text="@string/assistant_permissions_access_camera_title"
-                app:layout_constraintBottom_toBottomOf="@id/access_camera_icon"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/access_camera_icon"
-                app:layout_constraintTop_toTopOf="@id/access_camera_icon" />
+<!--            <androidx.appcompat.widget.AppCompatTextView-->
+<!--                android:id="@+id/access_camera_title"-->
+<!--                style="@style/default_text_style"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:ellipsize="end"-->
+<!--                android:maxLines="2"-->
+<!--                android:text="@string/assistant_permissions_access_camera_title"-->
+<!--                app:layout_constraintBottom_toBottomOf="@id/access_camera_icon"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toEndOf="@id/access_camera_icon"-->
+<!--                app:layout_constraintTop_toTopOf="@id/access_camera_icon" />-->
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/skip"
@@ -209,7 +209,7 @@
                 app:layout_constraintBottom_toTopOf="@id/grant_all_permissions"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/access_camera_title"
+                app:layout_constraintTop_toBottomOf="@id/record_audio_title"
                 app:layout_constraintVertical_bias="1"
                 app:layout_constraintVertical_chainStyle="packed"
                 app:layout_constraintWidth_max="@dimen/button_max_width" />

@@ -45,24 +45,24 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
 
-        <ImageView
-            android:id="@+id/toggle_video"
-            android:layout_width="@dimen/call_button_size"
-            android:layout_height="@dimen/call_button_size"
-            android:layout_marginEnd="16dp"
-            android:padding="@dimen/call_button_icon_padding"
-            android:src="@drawable/video_camera_slash"
-            android:contentDescription="@null"
-            android:enabled="@{false}"
-            android:background="@drawable/shape_round_in_call_disabled_button_background"
-            android:visibility="@{viewModel.hideVideo ? View.GONE : View.VISIBLE}"
-            app:tint="@color/in_call_button_tint_color"
-            app:layout_constraintHorizontal_bias="1"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintTop_toBottomOf="@id/call_actions_handle"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/hang_up"
-            app:layout_constraintEnd_toStartOf="@id/toggle_mute_mic" />
+<!--        <ImageView-->
+<!--            android:id="@+id/toggle_video"-->
+<!--            android:layout_width="@dimen/call_button_size"-->
+<!--            android:layout_height="@dimen/call_button_size"-->
+<!--            android:layout_marginEnd="16dp"-->
+<!--            android:padding="@dimen/call_button_icon_padding"-->
+<!--            android:src="@drawable/video_camera_slash"-->
+<!--            android:contentDescription="@null"-->
+<!--            android:enabled="@{false}"-->
+<!--            android:background="@drawable/shape_round_in_call_disabled_button_background"-->
+<!--            android:visibility="@{viewModel.hideVideo ? View.GONE : View.VISIBLE}"-->
+<!--            app:tint="@color/in_call_button_tint_color"-->
+<!--            app:layout_constraintHorizontal_bias="1"-->
+<!--            app:layout_constraintHorizontal_chainStyle="packed"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/call_actions_handle"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@id/hang_up"-->
+<!--            app:layout_constraintEnd_toStartOf="@id/toggle_mute_mic" />-->
 
         <ImageView
             android:id="@+id/toggle_mute_mic"
@@ -77,7 +77,7 @@
             app:tint="@color/in_call_button_tint_color"
             app:layout_constraintTop_toBottomOf="@id/call_actions_handle"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/toggle_video"
+            app:layout_constraintStart_toEndOf="@id/hang_up"
             app:layout_constraintEnd_toStartOf="@id/change_audio_output" />
 
         <ImageView
