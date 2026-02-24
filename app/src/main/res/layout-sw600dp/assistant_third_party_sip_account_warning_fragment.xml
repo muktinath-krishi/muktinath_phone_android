@@ -34,12 +34,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
                 android:contentDescription="@null"
+                android:scaleType="centerCrop"
                 android:src="@drawable/assistant_logo"
-                app:layout_constraintStart_toEndOf="@id/message"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/mountains"
+                app:layout_constraintStart_toEndOf="@id/message"
                 app:layout_constraintTop_toBottomOf="@id/title" />
 
             <ImageView
@@ -159,35 +159,22 @@
                 app:layout_constraintBottom_toTopOf="@id/continue_third_party_account_login" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:onClick="@{loginClickListener}"
-                style="@style/primary_button_label_style"
                 android:id="@+id/continue_third_party_account_login"
+                style="@style/primary_button_label_style"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
+                android:onClick="@{loginClickListener}"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
                 android:text="@string/assistant_third_party_sip_account_warning_ok"
-                app:layout_constraintWidth_max="@dimen/button_max_width"
-                app:layout_constraintTop_toBottomOf="@id/create_linphone_account"
-                app:layout_constraintBottom_toTopOf="@id/mountains"
-                app:layout_constraintStart_toStartOf="@id/title"
-                app:layout_constraintEnd_toEndOf="@id/message" />
-
-            <ImageView
-                android:id="@+id/mountains"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/mountains"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
-                android:contentDescription="@null"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:tint="?attr/color_main1_500" />
+                app:layout_constraintEnd_toEndOf="@id/message"
+                app:layout_constraintStart_toStartOf="@id/title"
+                app:layout_constraintTop_toBottomOf="@id/create_linphone_account"
+                app:layout_constraintWidth_max="@dimen/button_max_width" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
